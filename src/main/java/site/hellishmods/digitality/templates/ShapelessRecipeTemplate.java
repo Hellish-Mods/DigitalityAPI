@@ -2,7 +2,7 @@ package site.hellishmods.digitality.templates;
 
 import java.util.ArrayList;
 
-// Shapeless recipe jsons
+// Template for shapeless recipe jsons
 public class ShapelessRecipeTemplate extends RecipeTemplate {
     public ArrayList<ItemTemplate> ingredients = new ArrayList<>();
 

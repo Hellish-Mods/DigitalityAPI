@@ -56,8 +56,14 @@ public class VirtualResourcePack extends VirtualCommonPack {
     public void sound(Path ogg, String name, String category) {sound(ogg.toFile(), name, category);}
     public void sound(Path ogg, String category) {sound(ogg.toFile(), ogg.toFile().getName(), category);}
     
-    // Register texture via customAsset method
-    public void texture(String type, File file, String name) {customAsset(file, FilenameUtils.removeExtension(name)+".png", "textures", type);}
+    // Register textures
+    public void texture(String type, File file, String name) {
+        name = FilenameUtils.removeExtension(name); // Remove extension from name
+        File mcemeta = file.toPath().resolveSibling(FilenameUtils.removeExtension(file.getName())+".png.mcmeta").toFile(); // Mcmeta file
+
+        customAsset(file, name+".png", "textures", type); // Copy texture
+        if(mcemeta.exists()) customAsset(mcemeta, name+".png.mcmeta", "textures", type); // Copy .mcmeta file (if exists)
+    }
     public void texture(String type, File file) {texture(type, file, file.getName());}
     public void texture(String type, Path file, String name) {texture(type, file.toFile(), name);}
     public void texture(String type, Path file) {texture(type, file.toFile(), file.toFile().getName());}

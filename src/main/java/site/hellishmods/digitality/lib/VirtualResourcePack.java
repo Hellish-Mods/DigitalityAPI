@@ -41,7 +41,7 @@ public class VirtualResourcePack extends VirtualCommonPack {
 
             // Templates
             SoundTemplate soundObject = new SoundTemplate(); // Sound
-            soundObject.name = name;
+            soundObject.name = String.format("%s:%s", modid, name);
             soundObject.steam = (category=="record") ? true : false;
             SoundEventTemplate soundEvent = new SoundEventTemplate(); // Sound event
             soundEvent.category = category;

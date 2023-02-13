@@ -1,7 +1,7 @@
 # DigitalityAPI
 ### Making assets virtual!
 
-[![cf](https://cf.way2muchnoise.eu/digitality_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/digitality)
+[![cf](https://cf.way2muchnoise.eu/full_digitality_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/digitality)
 [![actions](https://github.com/hellish-mods/DigitalityAPI/actions/workflows/build.yml/badge.svg)](https://github.com/hellish-mods/DigitalityAPI)
 
 [![logo](https://raw.githubusercontent.com/Hellish-Mods/DigitalityAPI/main/src/main/resources/assets/digitality/icon.png)](https://www.curseforge.com/minecraft/mc-mods/digitality)

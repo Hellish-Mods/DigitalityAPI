@@ -8,8 +8,8 @@ issueTrackerURL="https://github.com/Hellish-Mods/digitalityAPI/issues"
 modId="digitality"
 version="${file.jarVersion}"
 
-displayName="digitalityAPI"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/digitalityAPI"
+displayName="DigitalityAPI"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/digitality"
 logoFile="pack.png"
 
 authors="Hellish Mods & Modern Modpacks"

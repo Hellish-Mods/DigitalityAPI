@@ -23,19 +23,11 @@ public class VirtualDataPack extends VirtualCommonPack {
 
     // Shapeless crafting recipe
     public void shapelessRecipe(String id, ItemTemplate result, ArrayList<String> ingredients) {
-        try {
-            // Create new json file
-            File recipefile = dir.resolve("recipes").resolve(id+".json").toFile();
-            recipefile.getParentFile().mkdirs();
-            recipefile.delete();
-            recipefile.createNewFile();
-
-            ShapelessRecipeTemplate recipe = new ShapelessRecipeTemplate(); // New recipe template
-            recipe.result = result; // Set the result to result
-            for(String ingredient : ingredients) recipe.ingredients.add(new ItemTemplate(ingredient)); // Add ingredients
-        
-            writeJson(recipefile, recipe); // Write json
-        } catch (IOException e) {new ExceptionHandler(e);}
+        ShapelessRecipeTemplate recipe = new ShapelessRecipeTemplate(); // New recipe template
+        recipe.result = result; // Set the result to result
+        for(String ingredient : ingredients) recipe.ingredients.add(new ItemTemplate(ingredient)); // Add ingredients
+    
+        newJson(dir.resolve("recipes").resolve(id+".json").toFile(), recipe); // Write json
     }
     public void shapelessRecipe(String id, ItemTemplate result, String... ingredients) {shapelessRecipe(id, result, new ArrayList<>(Arrays.asList(ingredients)));}
 
@@ -56,7 +48,7 @@ public class VirtualDataPack extends VirtualCommonPack {
 
             tagJson.values = new ArrayList<>(tagJson.values.stream().distinct().collect(Collectors.toList())); // Leave only unique ones
 
-            writeJson(tagfile, tagJson); // Write json
+            newJson(tagfile, tagJson); // Write json
         } 
         catch (IOException e) {new ExceptionHandler(e);}
     }

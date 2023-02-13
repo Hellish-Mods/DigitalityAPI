@@ -7,7 +7,7 @@ public class ExceptionHandler {
     public ExceptionHandler(Exception e) {
         switch (e.getClass().getCanonicalName()) {
             case "java.io.IOException": // IOException
-                digitality.LOGGER.error("File not existing resulted in an IOException, whoopsy!");
+                digitality.LOGGER.error("An IOException occurred. Possibly a bug on our end. Report this to our github!");
                 break;
         }
     }

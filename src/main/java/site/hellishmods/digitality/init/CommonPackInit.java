@@ -53,6 +53,7 @@ public class CommonPackInit {
 
     @SubscribeEvent
     static void onConstruct(final FMLConstructModEvent e) {
+        if (tmpDir==null) generate(); // Generate if not already
         ResourcePackInit.load(); // Call the resource pack method when the event comes
     }
 }
